@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>제주 가족여행 · 2026.08</title>
+<style>
+  :root{
+    --ocean:#1b9aaa; --ocean-deep:#0f6d78; --coral:#ff6b6b;
+    --sand:#fef6e4; --ink:#2b2d42; --muted:#8a8f9c; --line:#e7e2d6;
+    --day1:#1b9aaa; --day2:#f4a259; --day3:#e15c6f;
+    --card:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    background:var(--sand); color:var(--ink); line-height:1.6;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:560px; margin:0 auto; padding:0 0 48px;}
+
+  /* Header */
+  header{
+    background:linear-gradient(160deg,var(--ocean) 0%,var(--ocean-deep) 100%);
+    color:#fff; padding:30px 22px 26px; text-align:center;
+    border-radius:0 0 26px 26px;
+  }
+  header .eyebrow{font-size:13px; letter-spacing:3px; opacity:.85; font-weight:600}
+  header h1{font-size:27px; margin:6px 0 8px; font-weight:800; letter-spacing:-.5px}
+  header .meta{font-size:14px; opacity:.95}
+  header .meta b{font-weight:700}
+
+  /* Map */
+  .map-card{
+    background:var(--card); margin:-16px 14px 0; border-radius:20px;
+    padding:16px 14px 12px; box-shadow:0 8px 26px rgba(15,109,120,.13);
+    position:relative;
+  }
+  .map-card h2{font-size:15px; color:var(--ocean-deep); margin-bottom:8px; display:flex; align-items:center; gap:6px}
+  .map-card > svg{width:100%; height:auto; display:block; border-radius:14px}
+  .legend{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:10px; font-size:12.5px}
+  .legend span{display:inline-flex; align-items:center; gap:5px; color:var(--muted); font-weight:600}
+  .dot{width:11px; height:11px; border-radius:50%; display:inline-block}
+
+  /* Section title */
+  .sec-title{
+    display:flex; align-items:center; gap:8px;
+    margin:26px 20px 4px; font-size:16px; font-weight:800; color:var(--ink);
+  }
+  .sec-title::before{content:""; width:5px; height:18px; border-radius:3px; background:var(--coral)}
+
+  /* Day card */
+  .day{
+    background:var(--card); margin:14px 14px 0; border-radius:18px;
+    padding:16px 16px 6px; box-shadow:0 4px 16px rgba(43,45,66,.06);
+    border-top:5px solid var(--dc,var(--ocean));
+  }
+  .day-head{display:flex; align-items:baseline; gap:10px; margin-bottom:10px}
+  .day-head .badge{
+    background:var(--dc); color:#fff; font-weight:800; font-size:13px;
+    padding:3px 11px; border-radius:20px; letter-spacing:.5px;
+  }
+  .day-head .date{font-size:14px; color:var(--muted); font-weight:600}
+
+  /* Timeline item */
+  .item{display:flex; gap:12px; padding:9px 0; border-bottom:1px dashed var(--line)}
+  .item:last-child{border-bottom:none}
+  .item .time{flex:0 0 46px; font-size:13px; font-weight:700; color:var(--ocean-deep); padding-top:2px}
+  .item .icon{flex:0 0 26px; font-size:18px; text-align:center; line-height:1.4}
+  .item .body{flex:1}
+  .item .body .t{font-weight:700; font-size:15px}
+  .item .body .d{font-size:12.5px; color:var(--muted); margin-top:1px}
+  .item .body .d a{color:var(--ocean); word-break:break-all}
+
+  /* placeholder */
+  .todo{
+    background:#faf7ef; border:1.5px dashed #d9cfb6; border-radius:12px;
+    padding:9px 12px; margin:9px 0; display:flex; align-items:center; gap:8px;
+    color:#b6a67f; font-size:13.5px; font-weight:600;
+  }
+  .todo .icon{font-size:16px}
+
+  /* Info */
+  .info{
+    background:var(--card); margin:14px 14px 0; border-radius:18px; padding:16px 18px;
+    box-shadow:0 4px 16px rgba(43,45,66,.06);
+  }
+  .info h3{font-size:14px; color:var(--ocean-deep); margin-bottom:10px}
+  .info .row{display:flex; padding:6px 0; border-bottom:1px solid #f0ece1; font-size:13.5px}
+  .info .row:last-child{border-bottom:none}
+  .info .k{flex:0 0 92px; color:var(--muted); font-weight:600}
+  .info .v{flex:1; font-weight:600; word-break:break-all}
+  .info .v a{color:var(--ocean)}
+
+  footer{text-align:center; color:var(--muted); font-size:12px; margin-top:26px; padding:0 20px}
+  footer .heart{color:var(--coral)}
+  .drive{margin-top:10px; font-size:12.5px; color:var(--muted); text-align:center; line-height:1.6}
+  .drive b{color:var(--ink)}
+  .drive .tot{display:block; color:var(--ocean-deep); font-weight:700}
+  .drive{margin-top:10px; font-size:12.5px; color:var(--muted); text-align:center; line-height:1.6}
+  .drive b{color:var(--ink)}
+  .drive .tot{display:block; color:var(--ocean-deep); font-weight:700}
+  .leaflet-tooltip.pin-num{background:none; border:none; box-shadow:none;
+    color:#fff; font-weight:800; font-size:14px; padding:0}
+  .leaflet-tooltip.pin-num::before{display:none}
+  .drive{margin-top:10px; font-size:12.5px; color:var(--muted); text-align:center; line-height:1.6}
+  .drive b{color:var(--ink)}
+  .drive .tot{display:block; color:var(--ocean-deep); font-weight:700}
+  .leaflet-tooltip.pin-num{background:none; border:none; box-shadow:none;
+    color:#fff; font-weight:800; font-size:14px; padding:0}
+  .leaflet-tooltip.pin-num::before{display:none}
+  .zones{display:flex; gap:6px; overflow-x:auto; padding:0 0 9px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .zones::-webkit-scrollbar{display:none}
+  .zone{flex:0 0 auto; border:1.5px solid var(--line); background:#fff;
+    color:var(--muted); font-size:12.5px; font-weight:700; font-family:inherit;
+    padding:6px 13px; border-radius:16px; cursor:pointer; white-space:nowrap}
+  .zone.on{background:var(--ocean); border-color:var(--ocean); color:#fff}
+  .chips{display:flex; gap:6px; overflow-x:auto; padding:10px 0 2px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto; border:1.5px solid; background:#fff; color:var(--ink);
+    font-size:12.5px; font-weight:600; font-family:inherit; padding:6px 12px;
+    border-radius:16px; cursor:pointer; white-space:nowrap}
+  .chip b{margin-right:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">JEJU FAMILY TRIP</div>
+    <h1>🌴 제주 가족여행</h1>
+    <div class="meta"><b>2026. 8. 9(일) ~ 8. 11(화)</b> · 2박 3일<br>아빠 · 엄마 · 새봄</div>
+  </header>
+
+  <!-- ===== MAP ===== -->
+  <div class="map-card">
+    <h2>🗺️ 여행 동선</h2>
+    <!-- MAP:START (build.py가 places.json으로 자동 생성 — 직접 고치지 마세요) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <div id="zones" class="zones"></div>
+    <div id="map" style="width:100%; height:340px; border-radius:14px; z-index:0"></div>
+    <div id="chips" class="chips"></div>
+    <div class="drive">🚗 1→2 <b>7분</b> · 2→3 <b>13분</b> · 3→4 <b>24분</b> · 4→5 <b>13분</b> · 5→6 <b>47분</b> <span class='tot'>(총 1시간 44분)</span></div>
+    <script>
+    (function(){
+      var pts = [{"n": 1, "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "16:00", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}];
+      var colors = {"1": "#1b9aaa", "2": "#f4a259", "3": "#e15c6f"};
+      // 선은 캔버스로 그린다 (SVG로 그리면 일부 환경에서 색 덩어리로 깨진다)
+      var map = L.map('map', {scrollWheelZoom:false, preferCanvas:true});
+      map.attributionControl.setPrefix('Leaflet');  // 기본 접두사의 국기 아이콘 제거
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:19
+      }).addTo(map);
+
+      var byDay = {};
+      pts.forEach(function(p){ (byDay[p.day] = byDay[p.day] || []).push([p.lat, p.lon]); });
+      Object.keys(byDay).forEach(function(d){
+        L.polyline(byDay[d], {color: colors[d] || '#888', weight:4, opacity:.85}).addTo(map);
+      });
+
+      pts.forEach(function(p){
+        var c = colors[p.day] || '#888';
+        var html = '<b>'+p.name+'</b>'+(p.time ? ' <span style="color:#7f8590">'+p.time+'</span>' : '')+
+                   (p.addr ? '<br>'+p.addr : '')+
+                   (p.phone ? '<br><a href="tel:'+p.phone+'">'+p.phone+'</a>' : '')+
+                   (p.url ? '<br><a href="'+p.url+'" target="_blank">카카오맵에서 길찾기</a>' : '');
+        var icon = L.divIcon({
+          className:'',
+          html:'<div style="width:30px;height:30px;border-radius:50%;background:'+c+
+               ';color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;'+
+               'justify-content:center;border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,.35)">'+p.n+'</div>',
+          iconSize:[30,30], iconAnchor:[15,15]
+        });
+        p.marker = L.marker([p.lat, p.lon], {icon:icon}).addTo(map).bindPopup(html);
+      });
+
+      // 가까운 지점끼리 묶어 '구역' 버튼을 만든다 (제주 전체로 보면 시내가 뭉쳐 보이므로)
+      function km(a, b){
+        var dx = (a.lon - b.lon) * 92.5, dy = (a.lat - b.lat) * 111;
+        return Math.sqrt(dx*dx + dy*dy);
+      }
+      var zones = [], cur = [pts[0]];
+      for (var i = 1; i < pts.length; i++) {
+        if (km(pts[i], cur[cur.length-1]) <= 12) cur.push(pts[i]);
+        else { zones.push(cur); cur = [pts[i]]; }
+      }
+      zones.push(cur);
+
+      function bounds(list){ return list.map(function(p){ return [p.lat, p.lon]; }); }
+      function show(list){
+        if (list.length === 1) map.setView([list[0].lat, list[0].lon], 15);
+        else map.fitBounds(bounds(list), {padding:[40,40]});
+      }
+
+      var zoneBox = document.getElementById('zones');
+      function addZone(label, list, on){
+        var b = document.createElement('button');
+        b.className = 'zone' + (on ? ' on' : '');
+        b.textContent = label;
+        b.onclick = function(){
+          show(list);
+          Array.prototype.forEach.call(zoneBox.children, function(c){ c.classList.remove('on'); });
+          b.classList.add('on');
+        };
+        zoneBox.appendChild(b);
+      }
+      addZone('전체', pts, false);
+      zones.forEach(function(z){
+        var label = z.length > 1
+          ? z[0].n + '~' + z[z.length-1].n + '번 ' + z[0].name.replace(/ .*$/, '') + ' 일대'
+          : z[0].n + '번 ' + z[0].name;
+        addZone(label, z, false);
+      });
+
+      // 번호 칩: 누르면 그 장소로 이동하고 정보를 띄운다
+      var chipBox = document.getElementById('chips');
+      pts.forEach(function(p){
+        var c = document.createElement('button');
+        c.className = 'chip';
+        c.style.borderColor = colors[p.day] || '#888';
+        c.innerHTML = '<b style="color:' + (colors[p.day] || '#888') + '">' + p.n + '</b> ' + p.name;
+        c.onclick = function(){
+          map.setView([p.lat, p.lon], 15);
+          p.marker.openPopup();
+        };
+        chipBox.appendChild(c);
+      });
+
+      // 처음에는 지점이 가장 많이 몰린 구역을 보여준다
+      var biggest = zones.reduce(function(a, b){ return b.length > a.length ? b : a; }, zones[0]);
+      show(biggest);
+      zoneBox.children[zones.indexOf(biggest) + 1].classList.add('on');
+    })();
+    </script>
+    <!-- MAP:END -->
+
+    <div class="legend">
+      <span><i class="dot" style="background:var(--day1)"></i>Day 1 이동</span>
+      <span><i class="dot" style="background:var(--day2)"></i>Day 2 이동</span>
+      <span><i class="dot" style="background:var(--day3)"></i>Day 3 이동</span>
+    </div>
+  </div>
+
+  <!-- ===== DAY 1 ===== -->
+  <div class="sec-title">일정</div>
+
+  <div class="day" style="--dc:var(--day1)">
+    <div class="day-head"><span class="badge">DAY 1</span><span class="date">8월 9일 (일)</span></div>
+
+    <div class="item">
+      <div class="time">08:00</div><div class="icon">✈️</div>
+      <div class="body"><div class="t">부산 → 제주</div><div class="d">에어부산 BX8133 · 08:00 김해 출발 → 09:00 제주 도착</div></div>
+    </div>
+    <div class="item">
+      <div class="time">10:00</div><div class="icon">🚗</div>
+      <div class="body"><div class="t">렌트카 수령 (베뉴)</div><div class="d">제주렌트카 본사 · 제주시 용문로 8 · <a href="tel:1588-3301">1588-3301</a><br>예약 202607220116 · 실물 운전면허증 지참</div></div>
+    </div>
+
+    <div class="item">
+      <div class="time">11:00</div><div class="icon">🍜</div>
+      <div class="body"><div class="t">아점 · 자매국수</div><div class="d">제주시 항골남길 46</div></div>
+    </div>
+    <div class="item">
+      <div class="time">12:30</div><div class="icon">🛍️</div>
+      <div class="body"><div class="t">유니클로 제주이도점</div><div class="d">제주시 구남로8길 1 · <a href="tel:064-759-8756">064-759-8756</a> · 자매국수에서 24분</div></div>
+    </div>
+    <div class="item">
+      <div class="time">13:45</div><div class="icon">☕</div>
+      <div class="body"><div class="t">커피템플</div><div class="d">제주시 영평길 269 · <a href="tel:070-8806-8051">070-8806-8051</a> · 유니클로에서 13분</div></div>
+    </div>
+
+    <div class="item">
+      <div class="time">16:00</div><div class="icon">🏠</div>
+      <div class="body"><div class="t">숙소 입실 · 스테이제주이음</div><div class="d">서귀포시 표선면 하천로 37 · 커피템플에서 47분 · 출입 비밀번호는 당일 오전 문자</div></div>
+    </div>
+
+    <div class="todo"><span class="icon">🍽️</span> 저녁 — 추가 예정</div>
+  </div>
+
+  <!-- ===== DAY 2 ===== -->
+  <div class="day" style="--dc:var(--day2)">
+    <div class="day-head"><span class="badge">DAY 2</span><span class="date">8월 10일 (월)</span></div>
+
+    <div class="todo"><span class="icon">🍽️</span> 아침 — 추가 예정</div>
+    <div class="todo"><span class="icon">📷</span> 오전 볼거리 — 추가 예정</div>
+    <div class="todo"><span class="icon">🍽️</span> 점심 — 추가 예정</div>
+    <div class="todo"><span class="icon">📷</span> 오후 볼거리 — 추가 예정</div>
+    <div class="todo"><span class="icon">🍽️</span> 저녁 — 추가 예정</div>
+
+    <div class="item">
+      <div class="time">숙박</div><div class="icon">🏠</div>
+      <div class="body"><div class="t">스테이제주이음 (2박째)</div><div class="d">서귀포시 표선면 하천로 37</div></div>
+    </div>
+  </div>
+
+  <!-- ===== DAY 3 ===== -->
+  <div class="day" style="--dc:var(--day3)">
+    <div class="day-head"><span class="badge">DAY 3</span><span class="date">8월 11일 (화)</span></div>
+
+    <div class="todo"><span class="icon">🍽️</span> 아침 — 추가 예정</div>
+
+    <div class="item">
+      <div class="time">11:00</div><div class="icon">🏠</div>
+      <div class="body"><div class="t">숙소 퇴실</div><div class="d">스테이제주이음 · 체크아웃 11:00</div></div>
+    </div>
+
+    <div class="todo"><span class="icon">🍽️</span> 점심 — 추가 예정</div>
+    <div class="todo"><span class="icon">📷</span> 볼거리 — 추가 예정</div>
+
+    <div class="item">
+      <div class="time">14:00</div><div class="icon">🚗</div>
+      <div class="body"><div class="t">렌트카 반납</div><div class="d">제주렌트카 · 예약 202607220116</div></div>
+    </div>
+    <div class="item">
+      <div class="time">15:00</div><div class="icon">✈️</div>
+      <div class="body"><div class="t">제주 → 부산</div><div class="d">에어부산 BX8110 · 15:00 제주 출발 → 16:10 김해 도착</div></div>
+    </div>
+  </div>
+
+  <!-- ===== INFO ===== -->
+  <div class="sec-title">예약 정보</div>
+  <div class="info">
+    <h3>✈️ 항공</h3>
+    <div class="row"><div class="k">가는 편</div><div class="v">8/9 08:00~09:00 · 에어부산 BX8133 (좌석 2)</div></div>
+    <div class="row"><div class="k">오는 편</div><div class="v">8/11 15:00~16:10 · 에어부산 BX8110 (좌석 2)</div></div>
+  </div>
+  <div class="info">
+    <h3>🚗 렌트카</h3>
+    <div class="row"><div class="k">차종</div><div class="v">베뉴 (휘발유)</div></div>
+    <div class="row"><div class="k">대여</div><div class="v">8/9 10:00 ~ 8/11 14:00</div></div>
+    <div class="row"><div class="k">업체</div><div class="v">제주렌트카(주)</div></div>
+    <div class="row"><div class="k">예약번호</div><div class="v">202607220116</div></div>
+    <div class="row"><div class="k">확인</div><div class="v"><a href="https://www.jejurentcar.co.kr/smart/smartLogin.do?reno=202607220116">예약 확인 링크</a></div></div>
+  </div>
+  <div class="info">
+    <h3>🏠 숙소</h3>
+    <div class="row"><div class="k">이름</div><div class="v">스테이제주이음</div></div>
+    <div class="row"><div class="k">주소</div><div class="v">서귀포시 표선면 하천로 37</div></div>
+    <div class="row"><div class="k">입실/퇴실</div><div class="v">8/9 16:00 입실 · 8/11 11:00 퇴실</div></div>
+    <div class="row"><div class="k">비밀번호</div><div class="v">체크인 당일 오전 문자 발송</div></div>
+  </div>
+
+  <footer>
+    새봄이와 함께하는 첫 제주 <span class="heart">♥</span><br>
+    <span style="font-size:11px">일정은 계속 업데이트됩니다</span>
+  </footer>
+
+</div>
+</body>
+</html>
