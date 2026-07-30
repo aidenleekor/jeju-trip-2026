@@ -168,10 +168,10 @@
     <div id="zones" class="zones"></div>
     <div id="map" style="width:100%; height:340px; border-radius:14px; z-index:0"></div>
     <div id="chips" class="chips"></div>
-    <div class="drive">🚗 <span class='d1'>1일차</span> 1→2 <b>7분</b> · 2→3 <b>11분</b> · 3→4 <b>23분</b> · 4→5 <b>12분</b> · 5→6 <b>22분</b> · 6→7 <b>58분</b> <span class='tot'>2시간 13분</span><br><span class='d2'>2일차</span> 7→8 <b>20분</b> · 8→9 <b>19분</b> · 9→10 <b>5분</b> · 10→11 <b>28분</b> · 11→7 <b>8분</b> <span class='tot'>1시간 20분</span><br><span class='d3'>3일차</span> 7→12 <b>80분</b> <span class='tot'>1시간 20분</span></div>
+    <div class="drive">🚗 <span class='d1'>1일차</span> 1→2 <b>7분</b> · 2→3 <b>11분</b> · 3→4 <b>22분</b> · 4→5 <b>13분</b> · 5→6 <b>22분</b> · 6→7 <b>58분</b> <span class='tot'>2시간 13분</span><br><span class='d2'>2일차</span> 7→8 <b>20분</b> · 8→9 <b>19분</b> · 9→10 <b>5분</b> · 10→11 <b>28분</b> · 11→7 <b>8분</b> <span class='tot'>1시간 20분</span><br><span class='d3'>3일차</span> 7→12 <b>78분</b> · 12→13 <b>9분</b> · 13→14 <b>8분</b> <span class='tot'>1시간 35분</span></div>
     <script>
     (function(){
-      var pts = [{"n": 1, "id": "airport", "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "id": "rentcar", "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "id": "jamae", "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "id": "uniqlo", "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "id": "coffee", "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "id": "dongmun", "name": "제주동문시장", "lat": 33.5127966, "lon": 126.5283197, "day": 1, "time": "15:00", "addr": "제주특별자치도 제주시 동문로 16", "phone": "", "url": "http://place.map.kakao.com/1262338999"}, {"n": 7, "id": "stay", "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "17:30", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}, {"n": 8, "id": "batdi", "name": "목장카페밭디", "lat": 33.4079, "lon": 126.7722163, "day": 2, "time": "10:30", "addr": "제주특별자치도 서귀포시 표선면 번영로 2486", "phone": "0502-5553-3618", "url": "http://place.map.kakao.com/1011635289"}, {"n": 9, "id": "oreum", "name": "제주오름밥상", "lat": 33.4344907, "lon": 126.7356641, "day": 2, "time": "12:30", "addr": "제주특별자치도 제주시 구좌읍 비자림로 1220", "phone": "0502-5552-9829", "url": "http://place.map.kakao.com/117530180"}, {"n": 10, "id": "snoopy", "name": "스누피가든", "lat": 33.4441313, "lon": 126.7781669, "day": 2, "time": "14:00", "addr": "제주특별자치도 제주시 구좌읍 금백조로 930", "phone": "064-805-1118", "url": "http://place.map.kakao.com/852041742"}, {"n": 11, "id": "chonjip", "name": "제주촌집", "lat": 33.3229068, "lon": 126.8331378, "day": 2, "time": "18:00", "addr": "제주특별자치도 서귀포시 표선면 표선관정로 127-6", "phone": "064-787-8205", "url": "http://place.map.kakao.com/2058805658"}, {"n": 12, "id": "arte", "name": "아르떼 키즈파크 제주", "lat": 33.3539454, "lon": 126.3585969, "day": 3, "time": "10:50", "addr": "제주특별자치도 제주시 애월읍 월각로 929", "phone": "064-799-7007", "url": "http://place.map.kakao.com/1657397874"}];
+      var pts = [{"n": 1, "id": "airport", "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "id": "rentcar", "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "id": "jamae", "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "id": "uniqlo", "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "id": "coffee", "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "id": "dongmun", "name": "제주동문시장", "lat": 33.5127966, "lon": 126.5283197, "day": 1, "time": "15:00", "addr": "제주특별자치도 제주시 동문로 16", "phone": "", "url": "http://place.map.kakao.com/1262338999"}, {"n": 7, "id": "stay", "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "17:30", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}, {"n": 8, "id": "batdi", "name": "목장카페밭디", "lat": 33.4079, "lon": 126.7722163, "day": 2, "time": "10:30", "addr": "제주특별자치도 서귀포시 표선면 번영로 2486", "phone": "0502-5553-3618", "url": "http://place.map.kakao.com/1011635289"}, {"n": 9, "id": "oreum", "name": "제주오름밥상", "lat": 33.4344907, "lon": 126.7356641, "day": 2, "time": "12:30", "addr": "제주특별자치도 제주시 구좌읍 비자림로 1220", "phone": "0502-5552-9829", "url": "http://place.map.kakao.com/117530180"}, {"n": 10, "id": "snoopy", "name": "스누피가든", "lat": 33.4441313, "lon": 126.7781669, "day": 2, "time": "14:00", "addr": "제주특별자치도 제주시 구좌읍 금백조로 930", "phone": "064-805-1118", "url": "http://place.map.kakao.com/852041742"}, {"n": 11, "id": "chonjip", "name": "제주촌집", "lat": 33.3229068, "lon": 126.8331378, "day": 2, "time": "18:00", "addr": "제주특별자치도 서귀포시 표선면 표선관정로 127-6", "phone": "064-787-8205", "url": "http://place.map.kakao.com/2058805658"}, {"n": 12, "id": "arte", "name": "아르떼 키즈파크 제주", "lat": 33.3539454, "lon": 126.3585969, "day": 3, "time": "09:50", "addr": "제주특별자치도 제주시 애월읍 월각로 929", "phone": "064-799-7007", "url": "http://place.map.kakao.com/1657397874"}, {"n": 13, "id": "jeonwon", "name": "전원일기 동광점", "lat": 33.309729, "lon": 126.3459447, "day": 3, "time": "12:00", "addr": "제주특별자치도 서귀포시 안덕면 신화역사로 548", "phone": "064-763-5060", "url": "http://place.map.kakao.com/964312472"}, {"n": 14, "id": "jejudang", "name": "제주당", "lat": 33.3544698, "lon": 126.3558442, "day": 3, "time": "12:50", "addr": "제주특별자치도 제주시 애월읍 월각로 927", "phone": "064-792-1322", "url": "http://place.map.kakao.com/808417339"}];
       var colors = {"1": "#1b9aaa", "2": "#f4a259", "3": "#e15c6f"};
       // 선은 캔버스로 그린다 (SVG로 그리면 일부 환경에서 색 덩어리로 깨진다)
       var map = L.map('map', {scrollWheelZoom:false, preferCanvas:true});
@@ -359,20 +359,27 @@
 
 
     <div class="item">
-      <div class="time">09:30</div><div class="icon">🏠</div>
+      <div class="time">08:30</div><div class="icon">🏠</div>
       <div class="body"><div class="t">숙소 퇴실</div><div class="d">스테이제주이음 · 키즈파크 시간 확보를 위해 일찍 나섬 (체크아웃 마감 11:00)</div></div>
     </div>
 
     <div class="item">
-      <div class="time">10:50</div><div class="icon">🎨</div>
-      <div class="body"><div class="t">아르떼 키즈파크 제주</div><div class="d">제주시 애월읍 월각로 929 · <a href="tel:064-799-7007">064-799-7007</a> · 숙소에서 81분 · 12:50까지 두 시간</div></div>
+      <div class="time">09:50</div><div class="icon">🎨</div>
+      <div class="body"><div class="t">아르떼 키즈파크 제주</div><div class="d">제주시 애월읍 월각로 929 · <a href="tel:064-799-7007">064-799-7007</a> · 숙소에서 78분 · 11:50까지 두 시간</div></div>
     </div>
 
-    <div class="todo"><span class="icon">🍽️</span> 점심 — 장소 미정 (렌트카 반납 전, 시내 쪽)</div>
+    <div class="item">
+      <div class="time">12:00</div><div class="icon">🍚</div>
+      <div class="body"><div class="t">점심 · 전원일기 동광점</div><div class="d">서귀포시 안덕면 신화역사로 548 · <a href="tel:064-763-5060">064-763-5060</a> · 키즈파크에서 9분</div></div>
+    </div>
+    <div class="item">
+      <div class="time">12:50</div><div class="icon">☕</div>
+      <div class="body"><div class="t">카페 · 제주당</div><div class="d">제주시 애월읍 월각로 927 · <a href="tel:064-792-1322">064-792-1322</a> · 전원일기에서 8분 · 13:30에는 나서야 함</div></div>
+    </div>
 
     <div class="item">
       <div class="time">14:00</div><div class="icon">🚗</div>
-      <div class="body"><div class="t">렌트카 반납</div><div class="d">제주렌트카 · 예약 202607220116</div></div>
+      <div class="body"><div class="t">렌트카 반납</div><div class="d">제주렌트카 본사 · 제주당에서 30분 · 예약 202607220116</div></div>
     </div>
     <div class="item">
       <div class="time">15:00</div><div class="icon">✈️</div>
