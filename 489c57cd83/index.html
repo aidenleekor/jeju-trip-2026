@@ -7,9 +7,9 @@
 <title>제주 가족여행 · 2026.08</title>
 <style>
   :root{
-    --ocean:#739C04; --ocean-deep:#4E6B03; --coral:#FCA804;
+    --ocean:#FCA804; --ocean-deep:#6B9104; --coral:#523204;
     --sand:#FFF3DC; --ink:#523204; --muted:#9A8560; --line:#EBDFC4;
-    --day1:#739C04; --day2:#FCA804; --day3:#523204;
+    --day1:#FCA804; --day2:#739C04; --day3:#523204;
     --card:#ffffff;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -22,7 +22,7 @@
 
   /* Header */
   header{
-    background:linear-gradient(155deg,#8FB520 0%,var(--ocean) 45%,#523204 130%);
+    background:linear-gradient(155deg,#FFC23D 0%,var(--ocean) 48%,#C97A02 125%);
     color:#fff; padding:30px 22px 26px; text-align:center;
     border-radius:0 0 26px 26px;
   }
@@ -71,7 +71,7 @@
   .item .body{flex:1}
   .item .body .t{font-weight:700; font-size:15px}
   .item .body .d{font-size:12.5px; color:var(--muted); margin-top:1px}
-  .item .body .d a{color:var(--ocean); word-break:break-all}
+  .item .body .d a{color:var(--ocean-deep); word-break:break-all}
 
   /* placeholder */
   .todo{
@@ -90,7 +90,7 @@
   .info .row:last-child{border-bottom:none}
   .info .k{flex:0 0 92px; color:var(--muted); font-weight:600}
   .info .v{flex:1; font-weight:600; word-break:break-all}
-  .info .v a{color:var(--ocean)}
+  .info .v a{color:var(--ocean-deep)}
 
   footer{text-align:center; color:var(--muted); font-size:12px; margin-top:26px; padding:0 20px}
   footer .heart{color:var(--coral)}
@@ -184,7 +184,7 @@
     <script>
     (function(){
       var pts = [{"n": 1, "id": "airport", "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "id": "rentcar", "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "id": "jamae", "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "id": "uniqlo", "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "id": "coffee", "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "id": "dongmun", "name": "제주동문시장", "lat": 33.5127966, "lon": 126.5283197, "day": 1, "time": "15:00", "addr": "제주특별자치도 제주시 동문로 16", "phone": "", "url": "http://place.map.kakao.com/1262338999"}, {"n": 7, "id": "stay", "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "17:30", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}, {"n": 8, "id": "batdi", "name": "목장카페밭디", "lat": 33.4079, "lon": 126.7722163, "day": 2, "time": "10:30", "addr": "제주특별자치도 서귀포시 표선면 번영로 2486", "phone": "0502-5553-3618", "url": "http://place.map.kakao.com/1011635289"}, {"n": 9, "id": "oreum", "name": "제주오름밥상", "lat": 33.4344907, "lon": 126.7356641, "day": 2, "time": "12:30", "addr": "제주특별자치도 제주시 구좌읍 비자림로 1220", "phone": "0502-5552-9829", "url": "http://place.map.kakao.com/117530180"}, {"n": 10, "id": "snoopy", "name": "스누피가든", "lat": 33.4441313, "lon": 126.7781669, "day": 2, "time": "14:00", "addr": "제주특별자치도 제주시 구좌읍 금백조로 930", "phone": "064-805-1118", "url": "http://place.map.kakao.com/852041742"}, {"n": 11, "id": "chonjip", "name": "제주촌집", "lat": 33.3229068, "lon": 126.8331378, "day": 2, "time": "18:00", "addr": "제주특별자치도 서귀포시 표선면 표선관정로 127-6", "phone": "064-787-8205", "url": "http://place.map.kakao.com/2058805658"}, {"n": 12, "id": "arte", "name": "아르떼 키즈파크 제주", "lat": 33.3539454, "lon": 126.3585969, "day": 3, "time": "09:50", "addr": "제주특별자치도 제주시 애월읍 월각로 929", "phone": "064-799-7007", "url": "http://place.map.kakao.com/1657397874"}, {"n": 13, "id": "jeonwon", "name": "전원일기 동광점", "lat": 33.309729, "lon": 126.3459447, "day": 3, "time": "12:00", "addr": "제주특별자치도 서귀포시 안덕면 신화역사로 548", "phone": "064-763-5060", "url": "http://place.map.kakao.com/964312472"}, {"n": 14, "id": "rentcar_return", "name": "렌트카 반납", "lat": 33.5056944, "lon": 126.49788339999999, "day": 3, "time": "14:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 15, "id": "airport_out", "name": "제주공항 (출발)", "lat": 33.5075398, "lon": 126.49342299999999, "day": 3, "time": "15:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}];
-      var colors = {"1": "#739C04", "2": "#FCA804", "3": "#523204"};
+      var colors = {"1": "#FCA804", "2": "#739C04", "3": "#523204"};
       // 선은 캔버스로 그린다 (SVG로 그리면 일부 환경에서 색 덩어리로 깨진다)
       var map = L.map('map', {scrollWheelZoom:false, preferCanvas:true});
       map.attributionControl.setPrefix('Leaflet');  // 기본 접두사의 국기 아이콘 제거
