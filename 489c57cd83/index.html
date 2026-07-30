@@ -140,7 +140,8 @@
     .wrap{max-width:1080px; display:grid; grid-template-columns:400px 1fr;
       gap:0 22px; align-items:start; padding-bottom:40px}
     header{grid-column:1 / -1; border-radius:0 0 26px 26px}
-    .map-card{grid-column:1; position:sticky; top:18px; margin:-16px 0 0}
+    .map-card{grid-column:1; grid-row:2 / span 30; align-self:start;
+      position:sticky; top:18px; margin:-16px 0 0}
     .map-card #map{height:420px}
     .sec-title{grid-column:2; margin:14px 0 4px}
     .day, .info{grid-column:2; margin:14px 0 0}
