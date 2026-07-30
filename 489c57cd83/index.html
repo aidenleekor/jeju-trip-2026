@@ -156,10 +156,10 @@
     <div id="zones" class="zones"></div>
     <div id="map" style="width:100%; height:340px; border-radius:14px; z-index:0"></div>
     <div id="chips" class="chips"></div>
-    <div class="drive">🚗 <span class='d1'>1일차</span> 1→2 <b>7분</b> · 2→3 <b>12분</b> · 3→4 <b>24분</b> · 4→5 <b>12분</b> · 5→6 <b>31분</b> · 6→7 <b>27분</b> <span class='tot'>1시간 53분</span><br><span class='d2'>2일차</span> 7→8 <b>50분</b> <span class='tot'>50분</span><br><span class='d3'>3일차</span> 7→9 <b>81분</b> <span class='tot'>1시간 21분</span></div>
+    <div class="drive">🚗 <span class='d1'>1일차</span> 1→2 <b>7분</b> · 2→3 <b>11분</b> · 3→4 <b>24분</b> · 4→5 <b>12분</b> · 5→6 <b>31분</b> · 6→7 <b>27분</b> <span class='tot'>1시간 52분</span><br><span class='d2'>2일차</span> 7→8 <b>50분</b> · 8→9 <b>31분</b> · 9→7 <b>31분</b> <span class='tot'>1시간 52분</span><br><span class='d3'>3일차</span> 7→10 <b>80분</b> <span class='tot'>1시간 20분</span></div>
     <script>
     (function(){
-      var pts = [{"n": 1, "id": "airport", "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "id": "rentcar", "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "id": "jamae", "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "id": "uniqlo", "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "id": "coffee", "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "id": "snoopy", "name": "스누피가든", "lat": 33.4441313, "lon": 126.7781669, "day": 1, "time": "15:20", "addr": "제주특별자치도 제주시 구좌읍 금백조로 930", "phone": "064-805-1118", "url": "http://place.map.kakao.com/852041742"}, {"n": 7, "id": "stay", "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "18:00", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}, {"n": 8, "id": "olle", "name": "서귀포매일올레시장", "lat": 33.250149, "lon": 126.5632305, "day": 2, "time": "10:30", "addr": "제주특별자치도 서귀포시 중앙로62번길 18", "phone": "064-762-1949", "url": "http://place.map.kakao.com/7938166"}, {"n": 9, "id": "arte", "name": "아르떼 키즈파크 제주", "lat": 33.3539454, "lon": 126.3585969, "day": 3, "time": "10:50", "addr": "제주특별자치도 제주시 애월읍 월각로 929", "phone": "064-799-7007", "url": "http://place.map.kakao.com/1657397874"}];
+      var pts = [{"n": 1, "id": "airport", "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "id": "rentcar", "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "id": "jamae", "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "id": "uniqlo", "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "id": "coffee", "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "id": "snoopy", "name": "스누피가든", "lat": 33.4441313, "lon": 126.7781669, "day": 1, "time": "15:20", "addr": "제주특별자치도 제주시 구좌읍 금백조로 930", "phone": "064-805-1118", "url": "http://place.map.kakao.com/852041742"}, {"n": 7, "id": "stay", "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "18:00", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}, {"n": 8, "id": "olle", "name": "서귀포매일올레시장", "lat": 33.250149, "lon": 126.5632305, "day": 2, "time": "10:30", "addr": "제주특별자치도 서귀포시 중앙로62번길 18", "phone": "064-762-1949", "url": "http://place.map.kakao.com/7938166"}, {"n": 9, "id": "osulloc", "name": "오설록티하우스 티팩토리점", "lat": 33.3156157, "lon": 126.6813823, "day": 2, "time": "14:30", "addr": "제주특별자치도 서귀포시 남원읍 서성로652번길 191", "phone": "", "url": "http://place.map.kakao.com/1536636635"}, {"n": 10, "id": "arte", "name": "아르떼 키즈파크 제주", "lat": 33.3539454, "lon": 126.3585969, "day": 3, "time": "10:50", "addr": "제주특별자치도 제주시 애월읍 월각로 929", "phone": "064-799-7007", "url": "http://place.map.kakao.com/1657397874"}];
       var colors = {"1": "#1b9aaa", "2": "#f4a259", "3": "#e15c6f"};
       // 선은 캔버스로 그린다 (SVG로 그리면 일부 환경에서 색 덩어리로 깨진다)
       var map = L.map('map', {scrollWheelZoom:false, preferCanvas:true});
@@ -178,6 +178,11 @@
           if (stay && p.day > stay.day) arr.push([stay.lat, stay.lon]);
         }
         arr.push([p.lat, p.lon]);
+      });
+      // 마지막 날만 빼고 하루 끝에 숙소로 돌아오는 선을 잇는다
+      var lastDay = Math.max.apply(null, pts.map(function(p){ return p.day; }));
+      if (stay) Object.keys(byDay).forEach(function(d){
+        if (+d > stay.day && +d < lastDay) byDay[d].push([stay.lat, stay.lon]);
       });
       Object.keys(byDay).forEach(function(d){
         L.polyline(byDay[d], {color: colors[d] || '#888', weight:4, opacity:.85}).addTo(map);
@@ -318,7 +323,10 @@
       <div class="time">10:30</div><div class="icon">🛒</div>
       <div class="body"><div class="t">서귀포매일올레시장</div><div class="d">서귀포시 중앙로62번길 18 · <a href="tel:064-762-1949">064-762-1949</a> · 숙소에서 50분 · 점심도 시장에서</div></div>
     </div>
-    <div class="todo"><span class="icon">📷</span> 오후 볼거리 — 추가 예정</div>
+    <div class="item">
+      <div class="time">14:30</div><div class="icon">🍵</div>
+      <div class="body"><div class="t">오설록티하우스 티팩토리점</div><div class="d">서귀포시 남원읍 서성로652번길 191 · 올레시장에서 31분 · 숙소까지 31분</div></div>
+    </div>
     <div class="todo"><span class="icon">🍽️</span> 저녁 — 추가 예정</div>
 
     <div class="item">
