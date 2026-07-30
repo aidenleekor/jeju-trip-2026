@@ -161,9 +161,22 @@
     padding-right:6px; transition:background .15s}
   .item.tappable:active{background:#FBF4E4}
   @media (hover:hover){.item.tappable:hover{background:#FDF8EE}}
+  /* 귤이 배경에서 구름처럼 흘러간다 */
+  .oranges{position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:3;
+    mix-blend-mode:multiply}
+  .oranges span{position:absolute; top:var(--y); left:-14vw; font-size:var(--s);
+    opacity:var(--o); line-height:1; will-change:transform;
+    animation:drift var(--d) linear infinite; animation-delay:var(--dl)}
+  @keyframes drift{
+    from{transform:translate3d(0,0,0) rotate(-8deg)}
+    to{transform:translate3d(128vw,-26px,0) rotate(14deg)}
+  }
+  @media (prefers-reduced-motion:reduce){ .oranges span{animation:none} }
+  .wrap{position:relative; z-index:1}
 </style>
 </head>
 <body>
+<div class="oranges" aria-hidden="true"><span style="--y:6%; --s:62px; --o:0.2; --d:82s; --dl:-0s">🍊</span><span style="--y:18%; --s:38px; --o:0.16; --d:104s; --dl:-26s">🍊</span><span style="--y:31%; --s:74px; --o:0.13; --d:96s; --dl:-55s">🍊</span><span style="--y:44%; --s:44px; --o:0.18; --d:118s; --dl:-12s">🍊</span><span style="--y:57%; --s:56px; --o:0.14; --d:88s; --dl:-70s">🍊</span><span style="--y:70%; --s:34px; --o:0.19; --d:110s; --dl:-40s">🍊</span><span style="--y:83%; --s:68px; --o:0.12; --d:100s; --dl:-85s">🍊</span><span style="--y:92%; --s:46px; --o:0.17; --d:92s; --dl:-18s">🍊</span></div>
 <div class="wrap">
 
   <header>
