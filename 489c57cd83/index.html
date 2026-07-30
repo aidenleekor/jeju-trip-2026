@@ -68,7 +68,6 @@
   .item:last-child{border-bottom:none}
   .item .time{flex:0 0 46px; font-size:13px; font-weight:700; color:var(--ocean-deep); padding-top:2px}
   .item .time .to{display:block; font-size:11px; font-weight:600; color:var(--muted); margin-top:1px}
-  .item .icon{flex:0 0 26px; font-size:18px; text-align:center; line-height:1.4}
   .item .body{flex:1}
   .item .body .t{font-weight:700; font-size:15px}
   .item .body .d{font-size:12.5px; color:var(--muted); margin-top:1px}
@@ -80,7 +79,6 @@
     padding:9px 12px; margin:9px 0; display:flex; align-items:center; gap:8px;
     color:#b6a67f; font-size:13.5px; font-weight:600;
   }
-  .todo .icon{font-size:16px}
 
   /* Info */
   .info{
@@ -159,6 +157,10 @@
     font-weight:800; margin-right:6px; vertical-align:1px}
   .pin.d1{background:var(--day1)} .pin.d2{background:var(--day2)}
   .pin.d3{background:var(--day3)}
+  .item.tappable{cursor:pointer; border-radius:10px; margin:0 -6px; padding-left:6px;
+    padding-right:6px; transition:background .15s}
+  .item.tappable:active{background:#f2f8f9}
+  @media (hover:hover){.item.tappable:hover{background:#f6fafb}}
 </style>
 </head>
 <body>
@@ -166,20 +168,20 @@
 
   <header>
     <div class="eyebrow">JEJU FAMILY TRIP</div>
-    <h1>🌴 제주 가족여행</h1>
+    <h1>제주 가족여행</h1>
     <div class="meta"><b>2026. 8. 9(일) ~ 8. 11(화)</b> · 2박 3일<br>아빠 · 엄마 · 새봄</div>
   </header>
 
   <!-- ===== MAP ===== -->
   <div class="map-card">
-    <h2>🗺️ 여행 동선</h2>
+    <h2>여행 동선</h2>
     <!-- MAP:START (build.py가 places.json으로 자동 생성 — 직접 고치지 마세요) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <div id="zones" class="zones"></div>
     <div id="map" style="width:100%; height:340px; border-radius:14px; z-index:0"></div>
     <div id="chips" class="chips"></div>
-    <div class="drive">🚗 <span class='d1'>1일차</span> 1→2 <b>7분</b> · 2→3 <b>11분</b> · 3→4 <b>22분</b> · 4→5 <b>13분</b> · 5→6 <b>22분</b> · 6→7 <b>58분</b> <span class='tot'>2시간 13분</span><br><span class='d2'>2일차</span> 7→8 <b>20분</b> · 8→9 <b>19분</b> · 9→10 <b>5분</b> · 10→11 <b>29분</b> · 11→7 <b>8분</b> <span class='tot'>1시간 21분</span><br><span class='d3'>3일차</span> 7→12 <b>81분</b> · 12→13 <b>9분</b> · 13→14 <b>36분</b> · 14→15 <b>1분</b> <span class='tot'>2시간 7분</span></div>
+    <div class="drive"><span class='d1'>1일차</span> 1→2 <b>7분</b> · 2→3 <b>11분</b> · 3→4 <b>22분</b> · 4→5 <b>13분</b> · 5→6 <b>22분</b> · 6→7 <b>58분</b> <span class='tot'>2시간 13분</span><br><span class='d2'>2일차</span> 7→8 <b>20분</b> · 8→9 <b>19분</b> · 9→10 <b>5분</b> · 10→11 <b>29분</b> · 11→7 <b>8분</b> <span class='tot'>1시간 21분</span><br><span class='d3'>3일차</span> 7→12 <b>81분</b> · 12→13 <b>9분</b> · 13→14 <b>36분</b> · 14→15 <b>1분</b> <span class='tot'>2시간 7분</span></div>
     <script>
     (function(){
       var pts = [{"n": 1, "id": "airport", "name": "제주공항", "lat": 33.5068398, "lon": 126.492723, "day": 1, "time": "09:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}, {"n": 2, "id": "rentcar", "name": "제주렌트카 본사", "lat": 33.5049944, "lon": 126.4971834, "day": 1, "time": "10:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 3, "id": "jamae", "name": "자매국수", "lat": 33.498579, "lon": 126.4591426, "day": 1, "time": "11:00", "addr": "제주특별자치도 제주시 항골남길 46", "phone": "064-746-2222", "url": "http://place.map.kakao.com/21455793"}, {"n": 4, "id": "uniqlo", "name": "유니클로 제주이도점", "lat": 33.4912167, "lon": 126.5362246, "day": 1, "time": "12:30", "addr": "제주특별자치도 제주시 구남로8길 1", "phone": "064-759-8756", "url": "http://place.map.kakao.com/1969411749"}, {"n": 5, "id": "coffee", "name": "커피템플", "lat": 33.4781648, "lon": 126.5702468, "day": 1, "time": "13:45", "addr": "제주특별자치도 제주시 영평길 269", "phone": "070-8806-8051", "url": "http://place.map.kakao.com/99092488"}, {"n": 6, "id": "dongmun", "name": "제주동문시장", "lat": 33.5127966, "lon": 126.5283197, "day": 1, "time": "15:00", "addr": "제주특별자치도 제주시 동문로 16", "phone": "", "url": "http://place.map.kakao.com/1262338999"}, {"n": 7, "id": "stay", "name": "스테이제주이음", "lat": 33.3451558, "lon": 126.8423186, "day": 1, "time": "17:30", "addr": "제주특별자치도 서귀포시 표선면 하천로 37", "phone": "0507-1484-1511", "url": "http://place.map.kakao.com/833379597"}, {"n": 8, "id": "batdi", "name": "목장카페밭디", "lat": 33.4079, "lon": 126.7722163, "day": 2, "time": "10:30", "addr": "제주특별자치도 서귀포시 표선면 번영로 2486", "phone": "0502-5553-3618", "url": "http://place.map.kakao.com/1011635289"}, {"n": 9, "id": "oreum", "name": "제주오름밥상", "lat": 33.4344907, "lon": 126.7356641, "day": 2, "time": "12:30", "addr": "제주특별자치도 제주시 구좌읍 비자림로 1220", "phone": "0502-5552-9829", "url": "http://place.map.kakao.com/117530180"}, {"n": 10, "id": "snoopy", "name": "스누피가든", "lat": 33.4441313, "lon": 126.7781669, "day": 2, "time": "14:00", "addr": "제주특별자치도 제주시 구좌읍 금백조로 930", "phone": "064-805-1118", "url": "http://place.map.kakao.com/852041742"}, {"n": 11, "id": "chonjip", "name": "제주촌집", "lat": 33.3229068, "lon": 126.8331378, "day": 2, "time": "18:00", "addr": "제주특별자치도 서귀포시 표선면 표선관정로 127-6", "phone": "064-787-8205", "url": "http://place.map.kakao.com/2058805658"}, {"n": 12, "id": "arte", "name": "아르떼 키즈파크 제주", "lat": 33.3539454, "lon": 126.3585969, "day": 3, "time": "09:50", "addr": "제주특별자치도 제주시 애월읍 월각로 929", "phone": "064-799-7007", "url": "http://place.map.kakao.com/1657397874"}, {"n": 13, "id": "jeonwon", "name": "전원일기 동광점", "lat": 33.309729, "lon": 126.3459447, "day": 3, "time": "12:00", "addr": "제주특별자치도 서귀포시 안덕면 신화역사로 548", "phone": "064-763-5060", "url": "http://place.map.kakao.com/964312472"}, {"n": 14, "id": "rentcar_return", "name": "렌트카 반납", "lat": 33.5056944, "lon": 126.49788339999999, "day": 3, "time": "14:00", "addr": "제주특별자치도 제주시 용문로 8", "phone": "1588-3301", "url": "http://place.map.kakao.com/26887342"}, {"n": 15, "id": "airport_out", "name": "제주공항 (출발)", "lat": 33.5075398, "lon": 126.49342299999999, "day": 3, "time": "15:00", "addr": "제주특별자치도 제주시 공항로 2", "phone": "1661-2626", "url": "http://place.map.kakao.com/10808261"}];
@@ -279,6 +281,20 @@
         chipBox.appendChild(c);
       });
 
+      // 일정을 누르면 그 번호의 장소로 지도를 옮긴다
+      Array.prototype.forEach.call(document.querySelectorAll('.item[data-pin]'), function(el){
+        el.classList.add('tappable');
+        el.addEventListener('click', function(e){
+          if (e.target.closest('a')) return;   // 전화번호 링크는 그대로 동작
+          var p = pts[+el.getAttribute('data-pin') - 1];
+          if (!p) return;
+          map.setView([p.lat, p.lon], 15);
+          p.marker.openPopup();
+          if (window.matchMedia('(max-width:899px)').matches)
+            document.getElementById('map').scrollIntoView({behavior:'smooth', block:'center'});
+        });
+      });
+
       // 처음에는 지점이 가장 많이 몰린 구역을 보여준다
       var biggest = zones.reduce(function(a, b){ return b.length > a.length ? b : a; }, zones[0]);
       show(biggest);
@@ -301,46 +317,46 @@
     <div class="day-head"><span class="badge">DAY 1</span><span class="date">8월 9일 (일)</span></div>
 
     <div class="item">
-      <div class="time">06:40</div><div class="icon">🚙</div>
+      <div class="time">06:40</div>
       <div class="body"><div class="t">집에서 출발</div><div class="d">김해공항까지 약 40분</div></div>
     </div>
-    <div class="item">
-      <div class="time">08:00<span class="to">~09:00</span></div><div class="icon">✈️</div>
+    <div class="item" data-pin="1">
+      <div class="time">08:00<span class="to">~09:00</span></div>
       <div class="body"><div class="t"><span class="pin d1">1</span>부산 → 제주</div><div class="d">에어부산 BX8133 · 08:00 김해 출발 → 09:00 제주공항 도착</div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 7분</span></div>
-    <div class="item">
-      <div class="time">10:00</div><div class="icon">🚗</div>
+    <div class="gap"><span class="bd">차로 7분</span></div>
+    <div class="item" data-pin="2">
+      <div class="time">10:00</div>
       <div class="body"><div class="t"><span class="pin d1">2</span>렌트카 수령 (베뉴)</div><div class="d">제주렌트카 본사 · 제주시 용문로 8 · <a href="tel:1588-3301">1588-3301</a><br>예약 202607220116 · 실물 운전면허증 지참</div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 11분</span></div>
-    <div class="item">
-      <div class="time">11:00<span class="to">~12:00</span></div><div class="icon">🍜</div>
+    <div class="gap"><span class="bd">차로 11분</span></div>
+    <div class="item" data-pin="3">
+      <div class="time">11:00<span class="to">~12:00</span></div>
       <div class="body"><div class="t"><span class="pin d1">3</span>아점 · 자매국수</div><div class="d">제주시 항골남길 46</div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 22분</span></div>
-    <div class="item">
-      <div class="time">12:30<span class="to">~13:20</span></div><div class="icon">🛍️</div>
+    <div class="gap"><span class="bd">차로 22분</span></div>
+    <div class="item" data-pin="4">
+      <div class="time">12:30<span class="to">~13:20</span></div>
       <div class="body"><div class="t"><span class="pin d1">4</span>유니클로 제주이도점</div><div class="d">제주시 구남로8길 1 · <a href="tel:064-759-8756">064-759-8756</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 13분</span></div>
-    <div class="item">
-      <div class="time">13:45<span class="to">~14:40</span></div><div class="icon">☕</div>
+    <div class="gap"><span class="bd">차로 13분</span></div>
+    <div class="item" data-pin="5">
+      <div class="time">13:45<span class="to">~14:40</span></div>
       <div class="body"><div class="t"><span class="pin d1">5</span>커피템플</div><div class="d">제주시 영평길 269 · <a href="tel:070-8806-8051">070-8806-8051</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 22분</span></div>
-    <div class="item">
-      <div class="time">15:00<span class="to">~16:30</span></div><div class="icon">🐟</div>
+    <div class="gap"><span class="bd">차로 22분</span></div>
+    <div class="item" data-pin="6">
+      <div class="time">15:00<span class="to">~16:30</span></div>
       <div class="body"><div class="t"><span class="pin d1">6</span>제주동문시장</div><div class="d">제주시 동문로 16</div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 58분</span></div>
-    <div class="item">
-      <div class="time">17:30</div><div class="icon">🏠</div>
+    <div class="gap"><span class="bd">차로 58분</span></div>
+    <div class="item" data-pin="7">
+      <div class="time">17:30</div>
       <div class="body"><div class="t"><span class="pin d1">7</span>숙소 입실 · 스테이제주이음</div><div class="d">서귀포시 표선면 하천로 37 · 출입 비밀번호는 당일 오전 문자</div></div>
     </div>
 
     <div class="item">
-      <div class="time">19:00<span class="to">~20:00</span></div><div class="icon">🐟</div>
+      <div class="time">19:00<span class="to">~20:00</span></div>
       <div class="body"><div class="t">저녁 · 회 포장</div><div class="d">표선시장 근처에서 회 포장해 숙소에서 · 가게는 미정</div></div>
     </div>
   </div>
@@ -348,29 +364,29 @@
   <!-- ===== DAY 2 ===== -->
   <div class="day" style="--dc:var(--day2)">
     <div class="day-head"><span class="badge">DAY 2</span><span class="date">8월 10일 (월)</span></div>
-    <div class="gap"><span class="bd">🚗 숙소에서 20분</span></div>
-    <div class="item">
-      <div class="time">10:30<span class="to">~12:00</span></div><div class="icon">🐄</div>
+    <div class="gap"><span class="bd">숙소에서 차로 20분</span></div>
+    <div class="item" data-pin="8">
+      <div class="time">10:30<span class="to">~12:00</span></div>
       <div class="body"><div class="t"><span class="pin d2">8</span>목장카페밭디</div><div class="d">서귀포시 표선면 번영로 2486 · <a href="tel:0502-5553-3618">0502-5553-3618</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 19분</span></div>
-    <div class="item">
-      <div class="time">12:30<span class="to">~13:30</span></div><div class="icon">🍚</div>
+    <div class="gap"><span class="bd">차로 19분</span></div>
+    <div class="item" data-pin="9">
+      <div class="time">12:30<span class="to">~13:30</span></div>
       <div class="body"><div class="t"><span class="pin d2">9</span>점심 · 제주오름밥상</div><div class="d">제주시 구좌읍 비자림로 1220 · <a href="tel:0502-5552-9829">0502-5552-9829</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 5분</span></div>
-    <div class="item">
-      <div class="time">14:00<span class="to">~17:30</span></div><div class="icon">🐶</div>
+    <div class="gap"><span class="bd">차로 5분</span></div>
+    <div class="item" data-pin="10">
+      <div class="time">14:00<span class="to">~17:30</span></div>
       <div class="body"><div class="t"><span class="pin d2">10</span>스누피가든</div><div class="d">제주시 구좌읍 금백조로 930 · <a href="tel:064-805-1118">064-805-1118</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 29분</span></div>
-    <div class="item">
-      <div class="time">18:00<span class="to">~19:30</span></div><div class="icon">🍽️</div>
+    <div class="gap"><span class="bd">차로 29분</span></div>
+    <div class="item" data-pin="11">
+      <div class="time">18:00<span class="to">~19:30</span></div>
       <div class="body"><div class="t"><span class="pin d2">11</span>저녁 · 제주촌집</div><div class="d">서귀포시 표선면 표선관정로 127-6 · <a href="tel:064-787-8205">064-787-8205</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 8분</span></div>
+    <div class="gap"><span class="bd">차로 8분</span></div>
     <div class="item">
-      <div class="time">숙박</div><div class="icon">🏠</div>
+      <div class="time">숙박</div>
       <div class="body"><div class="t">스테이제주이음 (2박째)</div><div class="d">서귀포시 표선면 하천로 37</div></div>
     </div>
   </div>
@@ -381,26 +397,26 @@
 
 
     <div class="item">
-      <div class="time">08:30</div><div class="icon">🏠</div>
+      <div class="time">08:30</div>
       <div class="body"><div class="t">숙소 퇴실</div><div class="d">스테이제주이음 · 키즈파크 시간 확보를 위해 일찍 나섬 (체크아웃 마감 11:00)</div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 81분</span></div>
-    <div class="item">
-      <div class="time">09:50<span class="to">~11:50</span></div><div class="icon">🎨</div>
+    <div class="gap"><span class="bd">차로 81분</span></div>
+    <div class="item" data-pin="12">
+      <div class="time">09:50<span class="to">~11:50</span></div>
       <div class="body"><div class="t"><span class="pin d3">12</span>아르떼 키즈파크 제주</div><div class="d">제주시 애월읍 월각로 929 · <a href="tel:064-799-7007">064-799-7007</a> · 11:50까지 두 시간</div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 9분</span></div>
-    <div class="item">
-      <div class="time">12:00<span class="to">~13:00</span></div><div class="icon">🍚</div>
+    <div class="gap"><span class="bd">차로 9분</span></div>
+    <div class="item" data-pin="13">
+      <div class="time">12:00<span class="to">~13:00</span></div>
       <div class="body"><div class="t"><span class="pin d3">13</span>점심 · 전원일기 동광점</div><div class="d">서귀포시 안덕면 신화역사로 548 · <a href="tel:064-763-5060">064-763-5060</a></div></div>
     </div>
-    <div class="gap"><span class="bd">🚗 36분</span></div>
-    <div class="item">
-      <div class="time">14:00</div><div class="icon">🚗</div>
+    <div class="gap"><span class="bd">차로 36분</span></div>
+    <div class="item" data-pin="14">
+      <div class="time">14:00</div>
       <div class="body"><div class="t"><span class="pin d3">14</span>렌트카 반납</div><div class="d">제주렌트카 본사 · 제주시 용문로 8 · 예약 202607220116</div></div>
     </div>
     <div class="item">
-      <div class="time">15:00<span class="to">~16:10</span></div><div class="icon">✈️</div>
+      <div class="time">15:00<span class="to">~16:10</span></div>
       <div class="body"><div class="t">제주공항 → 부산</div><div class="d">에어부산 BX8110 · 15:00 제주 출발 → 16:10 김해 도착</div></div>
     </div>
   </div>
@@ -408,12 +424,12 @@
   <!-- ===== INFO ===== -->
   <div class="sec-title">예약 정보</div>
   <div class="info">
-    <h3>✈️ 항공</h3>
+    <h3>항공</h3>
     <div class="row"><div class="k">가는 편</div><div class="v">8/9 08:00~09:00 · 에어부산 BX8133 (좌석 2)</div></div>
     <div class="row"><div class="k">오는 편</div><div class="v">8/11 15:00~16:10 · 에어부산 BX8110 (좌석 2)</div></div>
   </div>
   <div class="info">
-    <h3>🚗 렌트카</h3>
+    <h3>렌트카</h3>
     <div class="row"><div class="k">차종</div><div class="v">베뉴 (휘발유)</div></div>
     <div class="row"><div class="k">대여</div><div class="v">8/9 10:00 ~ 8/11 14:00</div></div>
     <div class="row"><div class="k">업체</div><div class="v">제주렌트카(주)</div></div>
@@ -421,7 +437,7 @@
     <div class="row"><div class="k">확인</div><div class="v"><a href="https://www.jejurentcar.co.kr/smart/smartLogin.do?reno=202607220116">예약 확인 링크</a></div></div>
   </div>
   <div class="info">
-    <h3>🏠 숙소</h3>
+    <h3>숙소</h3>
     <div class="row"><div class="k">이름</div><div class="v">스테이제주이음</div></div>
     <div class="row"><div class="k">주소</div><div class="v">서귀포시 표선면 하천로 37</div></div>
     <div class="row"><div class="k">입실/퇴실</div><div class="v">8/9 16:00 입실 · 8/11 11:00 퇴실</div></div>
@@ -429,7 +445,7 @@
   </div>
 
   <footer>
-    새봄이와 함께하는 첫 제주 <span class="heart">♥</span><br>
+    새봄이와 함께하는 첫 제주 <span class="heart"></span><br>
     <span style="font-size:11px">일정은 계속 업데이트됩니다</span>
   </footer>
 
