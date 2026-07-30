@@ -6,9 +6,9 @@
 <style>
   @page { size: A4 portrait; margin: 11mm; }
   :root{
-    --ocean:#1b9aaa; --ocean-deep:#0f6d78; --coral:#ff6b6b;
-    --sand:#fef6e4; --ink:#2b2d42; --muted:#7f8590; --line:#e7e2d6;
-    --day1:#1b9aaa; --day2:#f4a259; --day3:#e15c6f;
+    --ocean:#739C04; --ocean-deep:#4E6B03; --coral:#FCA804;
+    --sand:#FFF3DC; --ink:#523204; --muted:#9A8560; --line:#EBDFC4;
+    --day1:#739C04; --day2:#FCA804; --day3:#523204;
   }
   *{box-sizing:border-box; margin:0; padding:0;
     -webkit-print-color-adjust:exact; print-color-adjust:exact;}
@@ -26,7 +26,7 @@
   /* Header */
   .head{
     display:flex; align-items:center; justify-content:space-between;
-    background:linear-gradient(120deg,var(--ocean),var(--ocean-deep));
+    background:linear-gradient(120deg,var(--ocean),#523204);
     color:#fff; border-radius:12px; padding:14px 20px; margin-bottom:14px;
   }
   .head .l .eyebrow{font-size:10px; letter-spacing:2.5px; opacity:.85; font-weight:700}
@@ -62,20 +62,20 @@
   .day .badge{background:var(--dc); color:#fff; font-weight:800; font-size:10.5px; padding:2px 8px; border-radius:12px}
   .day .date{font-size:11px; color:var(--muted); font-weight:700}
 
-  .it{display:flex; gap:7px; padding:5px 0; border-bottom:1px dashed #efeadf}
+  .it{display:flex; gap:7px; padding:5px 0; border-bottom:1px dashed #F0E6CE}
   .it:last-child{border-bottom:none}
   .it .tm{flex:0 0 34px; font-size:10px; font-weight:800; color:var(--ocean-deep); padding-top:1px}
   .it .bd .t{font-weight:700; font-size:11.5px; line-height:1.3}
   .it .bd .d{font-size:9.5px; color:var(--muted); margin-top:1px; line-height:1.35}
 
-  .todo{border:1.3px dashed #d9cfb6; background:#faf7ef; color:#b09b6c;
+  .todo{border:1.3px dashed #E3CE9A; background:#FFFAF0; color:#A8894A;
         border-radius:8px; padding:5px 8px; margin:5px 0; font-size:10.5px; font-weight:700;
         display:flex; align-items:center; gap:6px}
 
   /* Reservation cards */
   .resv{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
   .resv .card h2{margin-bottom:7px}
-  .resv .row{display:flex; padding:3.5px 0; border-bottom:1px solid #f2eee3; font-size:10.5px}
+  .resv .row{display:flex; padding:3.5px 0; border-bottom:1px solid #F0E6CE; font-size:10.5px}
   .resv .row:last-child{border-bottom:none}
   .resv .k{flex:0 0 50px; color:var(--muted); font-weight:700}
   .resv .v{flex:1; font-weight:600; word-break:break-all}
