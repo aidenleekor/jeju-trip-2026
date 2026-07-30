@@ -282,6 +282,8 @@
       });
 
       // 일정을 누르면 그 번호의 장소로 지도를 옮긴다
+      // (이 스크립트는 일정 목록보다 위에 있으므로 문서가 다 읽힌 뒤에 연결한다)
+      document.addEventListener('DOMContentLoaded', function(){
       Array.prototype.forEach.call(document.querySelectorAll('.item[data-pin]'), function(el){
         el.classList.add('tappable');
         el.addEventListener('click', function(e){
@@ -293,6 +295,7 @@
           if (window.matchMedia('(max-width:899px)').matches)
             document.getElementById('map').scrollIntoView({behavior:'smooth', block:'center'});
         });
+      });
       });
 
       // 처음에는 지점이 가장 많이 몰린 구역을 보여준다
